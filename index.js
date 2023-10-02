@@ -5,6 +5,7 @@ import cors from "cors";
 const app = express();
 
 app.get("/",cors(),async (req, res) => {
+    console.log("entro aqui ");
     try {
         const { data } = await axios.get("https://www.bcentral.cl/inicio");//llamamos a la banca central mediante una data
 
