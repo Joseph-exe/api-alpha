@@ -1,9 +1,13 @@
 import express from 'express';
 import axios from 'axios';
 import * as cheerio from 'cheerio';//usamos cheerio para recoger la informacion desordenada
+import cors from "cors";
 const app = express();
+const corsOptions = {
+    origin: 'https://test-s5f1.onrender.com/'
+}
 
-app.get("/",async (req, res) => {
+app.get("/",cors(corsOptions),async (req, res) => {
     try {
         const { data } = await axios.get("https://www.bcentral.cl/inicio");//llamamos a la banca central mediante una data
 
